@@ -1,6 +1,6 @@
 # Project 1 - *To-do the todo!*
 
-**To-do the todo** is an android app that allows building a todo list and basic todo items management functionality including adding new items, editing and deleting an existing item.
+**To-do the todo** is an application that allows you to add and delete things you need to do~. Whether you're out and about or home and don't wanna go, *To-do the todo!* will to-do the trick! (I'm sorry)
 
 Submitted by: **Lucas Ortiz**
 
