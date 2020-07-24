@@ -38,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        etItem.setText("I am doing this from java");
+
         itemsAdapter.OnLongClickListener onLongClickListener = new itemsAdapter.OnLongClickListener() {
             @Override
             public void onItemLongClicked(int position) {
-                Toast.makeText(getApplicationContext(), String.format("Item '%s' was removed", items.get(position)), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), String.format("'%s' was removed", items.get(position)), Toast.LENGTH_SHORT).show();
                 items.remove(position);
 
                 //Must notify Adapter
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
                 etItem.setText(""); //clear item
                 //Toast to reply back the part of the list that was added.
-                Toast.makeText(getApplicationContext(), String.format("Item '%s' was added", items.get(items.size()-1)), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), String.format("'%s' was added", items.get(items.size()-1)), Toast.LENGTH_SHORT).show();
                 saveItems();
             }
         });

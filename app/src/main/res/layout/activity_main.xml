@@ -27,7 +27,7 @@
         android:layout_marginBottom="0dp"
         android:layout_toStartOf="@+id/btnClr"
         android:ems="10"
-        android:hint="Friend's Name" />
+        android:hint="Write something to-do!" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvItems"
