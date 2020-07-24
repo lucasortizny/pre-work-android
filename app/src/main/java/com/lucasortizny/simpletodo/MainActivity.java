@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etItem;
     RecyclerView rvItems;
     itemsAdapter ia;
+    Button buttonclear;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         btnAdd = findViewById(R.id.btnAdd); //Convert Add Button to Java Object
         etItem = findViewById(R.id.etItem); //Convert TextView to Java Object
         rvItems = findViewById(R.id.rvItems); //Convert RecyclerView as Java Obj
+        buttonclear = findViewById(R.id.btnClr); //This is the button to clear it all completely.
         loadItems();
 
 
@@ -67,6 +69,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        buttonclear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int currentsize = items.size();
+
+                for (int i = currentsize-1; i > -1; i--){
+                    items.remove(i);
+                    ia.notifyItemRemoved(i);
+                }
+
+                Toast.makeText(getApplicationContext(), String.format("All %d items removed", currentsize), Toast.LENGTH_SHORT).show();
+                saveItems();
+            }
+        });
+
 
 
     }
@@ -82,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
             Log.e("MainActivity", "Unable to read file data correctly");
             items = new ArrayList<>();
         }
-        
+        Toast.makeText(getApplicationContext(), String.format("Total number of items retrieved: %d", items.size()), Toast.LENGTH_LONG).show();
 
     }
     private void saveItems(){

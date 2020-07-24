@@ -11,6 +11,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolder> {
+    /*public void notifyItemRangeRemoved(int i) {
+        for (int count = items.size(); count >= i; count--){
+
+        }
+    }*/
+
     public interface OnLongClickListener {
         void onItemLongClicked(int position);
     }
